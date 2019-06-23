@@ -35,6 +35,7 @@ function createInput(site){
 saveBtn.addEventListener('click', (e)=>{
     e.preventDefault()
     saveSettings()
+    chrome.tabs.reload()
 })
 
 

@@ -3,7 +3,7 @@ const settingsBtn = document.querySelector('#settingsbtn');
 const supportBtn = document.querySelector('#supportbtn');
 const blockBtn = document.querySelector('#blockbtn');
 const pauseBtn = document.querySelector('#pausebtn');
-// const rateBtn = document.querySelector('#ratebtn');
+const rateBtn = document.querySelector('#ratebtn');
 
 //Open setting/options page on click.
 settingsBtn.addEventListener('click', ()=>{
@@ -17,14 +17,13 @@ settingsBtn.addEventListener('click', ()=>{
 //Block current site
 blockBtn.addEventListener('click', (e)=>{
     e.preventDefault();
-    blockBtn.style.backgroundColor = 'red';
     //find the url of current tab
     getSiteToBlock()
 
 })
 
 supportBtn.addEventListener('click', e=> window.open('https://www.buymeacoffee.com/tobe', '_blank'))
-// rateBtn.addEventListener('click', e=> window.open('', '_blank'))
+rateBtn.addEventListener('click', e=> window.open('https://chrome.google.com/webstore/detail/not-now-close-distracting/bopdbgpdeldfadpngbdhhbmmaeahdael?hl=en&gl=AE&authuser=0', '_blank'))
 
 
 function getSiteToBlock(){

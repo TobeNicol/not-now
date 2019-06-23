@@ -17,7 +17,7 @@ chrome.tabs.onUpdated.addListener(function(id, changeInfo, tab){
                     //remove tab
                     chrome.tabs.remove(id, function(){
                         if(!chrome.runtime.lastError){ //handle this better
-                            chrome.notifications.create({'type': 'basic', 'title': 'Not Now..', 'message': 'Focus.', 'iconUrl': './images/icon16.png' })
+                            chrome.notifications.create({'type': 'basic', 'title': 'Not Now..', 'message': 'Don\'t you have something else to do ?', 'iconUrl': './images/icon16.png' })
                         }
                     })
     

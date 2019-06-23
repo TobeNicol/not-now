@@ -1,7 +1,8 @@
 
 :root{
-    --primary: rgb(255, 76, 76);
-
+    /* --primary: rgb(255, 76, 76); */
+    --primary: rgb(0, 0, 0);
+    --secondary: rgb(255, 76, 76); 
 }
 
 
@@ -16,8 +17,8 @@
 
 .container{
     background: var(--primary);
-    width: 250px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     display: block;
     padding: 1.5em 2%;
 }
@@ -26,6 +27,7 @@
     width: 100vw;
     min-height: 100vh;
     padding: 1.5em 20%;
+    background: white;
 }
 
 .inner{
@@ -34,12 +36,15 @@
     height: 100%;
     padding: 1em;
     border-radius: 20px;
-    box-shadow: 2px 2px 30px rgb(224, 55, 55);
-    /* overflow: hidden; */
 }
 
 .options-inner {
     padding: 5em;
+    background: var(--primary);
+    color: white;
+}
+.options-inner > *{
+    color: white;
 }
 
 
@@ -72,6 +77,7 @@
 
 .btn:hover{
     transform: scale(1,1);
+    background: var(--secondary)
 }
 
 .btn-sm{
@@ -83,7 +89,7 @@
 /*Settings*/
 .settings-form__item{
     font-size: 1.2rem;
-    background: var(--primary);
+    background: var(--secondary);
     padding: 1rem;
     margin-top: 0.5rem;
     border-radius: 20px;
@@ -97,8 +103,13 @@ input[type=checkbox] {
     color: white;
 }
 
+#settings__text {
+    color: white;
+}
+
 #settings-form__save{
     margin: 1rem auto;
+    background: var(--secondary);
 }
 
 @media only screen and (max-width: 600px){
@@ -117,11 +128,4 @@ input[type=checkbox] {
    html{
        font-size: 30px;
    }
-}
-
-
-/* ADD UTILITIES FOR
-- order radius
-- Margin bottom
-- Shadow
-*/
+} 
