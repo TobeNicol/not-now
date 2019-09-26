@@ -5,6 +5,10 @@ const blockBtn = document.querySelector('#blockbtn');
 const pauseBtn = document.querySelector('#pausebtn');
 const rateBtn = document.querySelector('#ratebtn');
 
+chrome.storage.local.get(['isPaused'], function(items){
+ pauseStyles(items.isPaused);
+})
+
 //Open setting/options page on click.
 settingsBtn.addEventListener('click', ()=>{
     if (chrome.runtime.openOptionsPage) { 
@@ -12,6 +16,17 @@ settingsBtn.addEventListener('click', ()=>{
       } else {
         window.open(chrome.runtime.getURL('options.html'));
       }
+})
+//pause
+pauseBtn.addEventListener('click', ()=>{
+  chrome.storage.local.get(['isPaused'], function(items){
+    pauseStyles(items.isPaused, true);
+    if(!items.isPaused)  chrome.storage.local.set({'isPaused': true});
+    else {
+      chrome.storage.local.set({'isPaused': false});
+    } 
+})
+
 })
 
 //Block current site
@@ -46,6 +61,18 @@ function blockSite(url){
 
 
   })
+}
+
+function pauseStyles(paused, switched){
+  //switch boolean values if instructed.
+  paused = switched ? !paused : paused;
+  if(!paused){
+    pauseBtn.innerHTML = '❚❚ PAUSE';
+    blockBtn.style.display = 'block';
+  }else{
+    pauseBtn.innerHTML = '► PLAY';
+    blockBtn.style.display = 'none';
+  }
 }
 
 
